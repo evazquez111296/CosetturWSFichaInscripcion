@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/09/2018 11:21:00 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.cosettur.models.pojos.CatalogoRuta" table="Catalogo_Ruta" catalog="COSSETURdb" optimistic-lock="version">
+        <id name="idRuta" type="java.lang.Short">
+            <column name="Id_Ruta" />
+            <generator class="identity" />
+        </id>
+        <property name="ruta" type="string">
+            <column name="Ruta" length="60" not-null="true" unique="true" />
+        </property>
+        <set name="fichaInscripcions" table="Ficha_Inscripcion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Id_Ruta" not-null="true" />
+            </key>
+            <one-to-many class="com.cosettur.models.pojos.FichaInscripcion" />
+        </set>
+    </class>
+</hibernate-mapping>

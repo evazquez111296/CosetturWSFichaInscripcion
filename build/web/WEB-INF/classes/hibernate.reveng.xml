@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="COSSETURdb"/>
+  <table-filter match-name="Catalogo_Dias"/>
+  <table-filter match-name="Ficha_Inscripcion"/>
+  <table-filter match-name="Catalogo_Ciclo"/>
+  <table-filter match-name="Catalogo_Grado"/>
+  <table-filter match-name="Usuario"/>
+  <table-filter match-name="Catalogo_Ruta"/>
+  <table-filter match-name="Catalogo_Modalidad"/>
+  <table-filter match-name="Horario"/>
+</hibernate-reverse-engineering>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/09/2018 11:21:00 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.cosettur.models.pojos.FichaInscripcion" table="Ficha_Inscripcion" catalog="COSSETURdb" optimistic-lock="version">
+        <id name="folio" type="java.lang.Integer">
+            <column name="Folio" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="catalogoCiclo" class="com.cosettur.models.pojos.CatalogoCiclo" fetch="select">
+            <column name="Id_Ciclo" not-null="true" />
+        </many-to-one>
+        <many-to-one name="catalogoGrado" class="com.cosettur.models.pojos.CatalogoGrado" fetch="select">
+            <column name="Id_Grado" not-null="true" />
+        </many-to-one>
+        <many-to-one name="catalogoModalidad" class="com.cosettur.models.pojos.CatalogoModalidad" fetch="select">
+            <column name="Id_Modalidad" not-null="true" />
+        </many-to-one>
+        <many-to-one name="catalogoRuta" class="com.cosettur.models.pojos.CatalogoRuta" fetch="select">
+            <column name="Id_Ruta" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="com.cosettur.models.pojos.Usuario" fetch="select">
+            <column name="Usuario" length="20" not-null="true" />
+        </many-to-one>
+        <property name="semestre" type="byte">
+            <column name="Semestre" not-null="true" />
+        </property>
+        <property name="localidad" type="string">
+            <column name="Localidad" length="100" not-null="true" />
+        </property>
+        <property name="tutor" type="string">
+            <column name="Tutor" length="80" not-null="true" />
+        </property>
+        <property name="tutorado" type="string">
+            <column name="Tutorado" length="80" not-null="true" />
+        </property>
+        <property name="telefonoCasa" type="string">
+            <column name="Telefono_Casa" length="25" not-null="true" />
+        </property>
+        <property name="fecha" type="date">
+            <column name="fecha" length="10" not-null="true" />
+        </property>
+        <property name="pago" type="long">
+            <column name="Pago" precision="10" scale="0" not-null="true" />
+        </property>
+        <one-to-one name="horario" class="com.cosettur.models.pojos.Horario"></one-to-one>
+    </class>
+</hibernate-mapping>

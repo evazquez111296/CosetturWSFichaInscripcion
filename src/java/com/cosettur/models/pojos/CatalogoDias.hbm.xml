@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/09/2018 11:21:00 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.cosettur.models.pojos.CatalogoDias" table="Catalogo_Dias" catalog="COSSETURdb" optimistic-lock="version">
+        <id name="idDia" type="byte">
+            <column name="Id_dia" />
+            <generator class="assigned" />
+        </id>
+        <property name="dia" type="string">
+            <column name="dia" length="15" not-null="true" unique="true" />
+        </property>
+    </class>
+</hibernate-mapping>

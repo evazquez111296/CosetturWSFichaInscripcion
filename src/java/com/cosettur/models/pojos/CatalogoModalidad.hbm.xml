@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/09/2018 11:21:00 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.cosettur.models.pojos.CatalogoModalidad" table="Catalogo_Modalidad" catalog="COSSETURdb" optimistic-lock="version">
+        <id name="idModalidad" type="java.lang.Byte">
+            <column name="Id_Modalidad" />
+            <generator class="identity" />
+        </id>
+        <property name="modalidad" type="string">
+            <column name="Modalidad" length="20" />
+        </property>
+        <set name="fichaInscripcions" table="Ficha_Inscripcion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Id_Modalidad" not-null="true" />
+            </key>
+            <one-to-many class="com.cosettur.models.pojos.FichaInscripcion" />
+        </set>
+    </class>
+</hibernate-mapping>

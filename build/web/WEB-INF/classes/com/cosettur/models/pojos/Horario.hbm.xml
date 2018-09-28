@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 25/09/2018 11:21:00 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.cosettur.models.pojos.Horario" table="Horario" catalog="COSSETURdb" optimistic-lock="version">
+        <id name="folio" type="int">
+            <column name="Folio" />
+            <generator class="foreign">
+                <param name="property">fichaInscripcion</param>
+            </generator>
+        </id>
+        <one-to-one name="fichaInscripcion" class="com.cosettur.models.pojos.FichaInscripcion" constrained="true"></one-to-one>
+        <property name="fechaInicioLunes" type="timestamp">
+            <column name="Fecha_Inicio_Lunes" length="19" not-null="true" />
+        </property>
+        <property name="fechaFinLunes" type="timestamp">
+            <column name="Fecha_Fin_Lunes" length="19" not-null="true" />
+        </property>
+        <property name="fechaInicioMartes" type="timestamp">
+            <column name="Fecha_Inicio_Martes" length="19" not-null="true" />
+        </property>
+        <property name="fechaFinMartes" type="timestamp">
+            <column name="Fecha_Fin_Martes" length="19" not-null="true" />
+        </property>
+        <property name="fechaInicioMiercoles" type="timestamp">
+            <column name="Fecha_Inicio_Miercoles" length="19" not-null="true" />
+        </property>
+        <property name="fechaFinMiercoles" type="timestamp">
+            <column name="Fecha_Fin_Miercoles" length="19" not-null="true" />
+        </property>
+        <property name="fechaInicioJueves" type="timestamp">
+            <column name="Fecha_Inicio_Jueves" length="19" not-null="true" />
+        </property>
+        <property name="fechaFinJueves" type="timestamp">
+            <column name="Fecha_Fin_jueves" length="19" not-null="true" />
+        </property>
+        <property name="fechaInicioViernes" type="timestamp">
+            <column name="Fecha_Inicio_Viernes" length="19" not-null="true" />
+        </property>
+        <property name="fechaFinViernes" type="timestamp">
+            <column name="Fecha_Fin_Viernes" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
